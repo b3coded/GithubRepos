@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StatusBar } from "react-native";
 import Routes from "./routes";
 
 class App extends Component {
@@ -10,6 +10,7 @@ class App extends Component {
     render() { 
         return (
             <View style={{flex: 1}}>
+                <StatusBar backgroundColor="#000" barStyle="light-content" />
                 <Routes />
             </View>
         )

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import styles from "../styles";
 
 class Auth extends Component {
     constructor(props) {
@@ -20,11 +21,13 @@ class Auth extends Component {
                 <Text style={{textAlign: "center"}}>
                     <Icon size={120} name="github" color="#000" solid/>
                 </Text>
-                
+                <Text style={{textAlign: "center", fontSize: 32, fontWeight: "bold", color: "#000", marginBottom: 20}}>
+                    Github Repos
+                </Text>
                 <TextInput 
-                placeholder="Username"
+                placeholder="username"
                 onChangeText={(username) => this.setState({username})}
-                style={{marginVertical: 10, padding: 10, borderRadius: 5, borderWidth: 1, borderColor: "#000"}}
+                style={{marginVertical: 20, padding: 10, borderRadius: 5, borderWidth: 1, borderColor: "#000"}}
                 autoCapitalize="none"
                 autoCorrect={false}
                 />

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, TouchableOpacity, ScrollView, Image } from "react-native";
+import { View, Text, FlatList, TouchableOpacity, ScrollView, Image, TextInput } from "react-native";
+import styles from "../styles";
+import ListItem from "../Components/ListItem";
 
 class Home extends Component {
     constructor(props) {
@@ -45,37 +47,32 @@ class Home extends Component {
         const { username, repos, profilePicLink } = this.state;
         return (
                 <ScrollView>
-                <View style={{flex: 1, padding: 20}}>
-                    <View style={{flexDirection: "row", alignContent: "flex-end", marginBottom: 20}}>
-                        <View style={{flex: 1}}>
-                            <Text style={{color: "#000", fontWeight: "bold", fontSize: 20}}>{username}</Text>
+                
+                <View style={{flex: 1, backgroundColor: "#000", padding: 20}}>
+                <View style={{flexDirection: "row", alignContent: "flex-end"}}>
+                        <View style={{flex: 1, justifyContent: "flex-end"}}>
+                            <Text style={{color: "#fff", fontWeight: "bold", fontSize: 22, letterSpacing: 1}}>{username}</Text>
                         </View>
                         <Image
                             style={{width: 50, height: 50, borderRadius: 50, overflow: "hidden"}}
                             source={{uri: profilePicLink}}
                         />
-
-                    </View>
-
-                    
+                </View>
+                <TextInput 
+                    placeholder="search"
+                    style={{marginVertical: 20, padding: 10, borderRadius: 5, borderWidth: 1, borderColor: "#fff", backgroundColor: "#fff", color: "#fff"}}
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                />
+                </View>
+                <View style={{flex: 1, backgroundColor: "#f7f7f7"}}>
 
                     <FlatList
                         data={repos}
                         renderItem={
                             ({item}) => {
                                 return (
-                                    <TouchableOpacity
-                                    style={{flex: 1, flexDirection: "row", marginVertical: 10}}
-                                    onPress={() => {alert(item.name)}}
-                                    >
-                                        <View style={{flex: 1}}>
-                                            <Text style={{color: "#000", fontWeight: "bold", fontSize: 18}}>{item.name}</Text>
-                                            <Text>{item.description}</Text>
-                                        </View>
-                                        <View>
-                                            <Text></Text>
-                                        </View>
-                                    </TouchableOpacity>
+                                    <ListItem item={item} />
                                 );
                             }
                         }
