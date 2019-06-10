@@ -26,7 +26,7 @@ class Home extends Component {
     }
     getData = async () => {
         const { username } = this.state;
-        let link = "https://api.github.com/users/" + username + "/starred?sort=updated&direction=desc";
+        let link = "https://api.github.com/users/" + username + "/repos";
 
         await fetch(link).then(
             (response) => {
