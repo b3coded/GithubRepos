@@ -13,13 +13,13 @@ const styles = {
     borderRadius: 5,
     elevation: 2
 }
-const ListItem = ({item}) => {
+const ListItem = ({item, onPress}) => {
     let customColor = "#000";
     if(item.language != null){
         customColor = languages[item.language].color;
     }
     return (
-    <TouchableOpacity style={styles} >
+    <TouchableOpacity style={styles} onPress={onPress}>
         <View style={{flex: 1}}>
             <Text style={{color: "#000", fontWeight: "bold", fontSize: 22, marginBottom: 10}}>
                 <Icon name="book" color="#000" size={18} /> {item.name}
