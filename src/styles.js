@@ -1,4 +1,13 @@
+import React, {Component} from 'react';
 import {StyleSheet} from 'react-native';
+import {ThemeProvider} from 'styled-components';
+
+export const Colors = {
+  lightBackground: '#FFF',
+  primary: '#000',
+  text: '#FFF',
+};
+
 const styles = StyleSheet.create({
   listItem: {
     flexDirection: 'row',
@@ -16,4 +25,11 @@ const styles = StyleSheet.create({
     shadowColor: '#ccc',
   },
 });
-export default styles;
+
+const AppTheme = ({children}) => (
+  <ThemeProvider theme={Colors}>
+    <>{children}</>
+  </ThemeProvider>
+);
+
+export default AppTheme;

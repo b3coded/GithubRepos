@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, StatusBar} from 'react-native';
 import Routes from './routes';
+import AppTheme from './styles';
 
 class App extends Component {
   constructor(props) {
@@ -11,7 +12,9 @@ class App extends Component {
     return (
       <View style={{flex: 1}}>
         <StatusBar backgroundColor="#000" barStyle="light-content" />
-        <Routes />
+        <AppTheme>
+          <Routes />
+        </AppTheme>
       </View>
     );
   }

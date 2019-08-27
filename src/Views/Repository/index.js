@@ -8,8 +8,8 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import styles from '../styles';
-import Header from '../Components/Header';
+import styles from '../../styles';
+import Header from '../../Components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 class Repository extends Component {

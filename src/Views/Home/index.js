@@ -8,9 +8,8 @@ import {
   Image,
   TextInput,
 } from 'react-native';
-import styles from '../styles';
-import ListItem from '../Components/ListItem';
-import Header from '../Components/Header';
+import ListItem from '../../Components/ListItem';
+import Header from '../../Components/Header';
 
 class Home extends Component {
   constructor(props) {
