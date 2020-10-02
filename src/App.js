@@ -1,14 +1,9 @@
-import React, {Component} from 'react';
-import {View, Text, StatusBar} from 'react-native';
+import React from 'react';
+import {View, StatusBar} from 'react-native';
 import Routes from './routes';
 import AppTheme from './styles';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
+export default function App () {
     return (
       <View style={{flex: 1}}>
         <StatusBar backgroundColor="#000" barStyle="light-content" />
@@ -17,7 +12,4 @@ class App extends Component {
         </AppTheme>
       </View>
     );
-  }
 }
-
-export default App;
